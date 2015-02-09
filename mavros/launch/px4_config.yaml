@@ -67,12 +67,12 @@ position:
 #    child_frame_id: "attitude"
 #    tf_rate_limit: 10.0
 #
-#  # setpoint_position
-#  position:
-#    listen_tf: false
-#    frame_id: "local_origin"
-#    child_frame_id: "setpoint"
-#    tf_rate_limit: 10.0
+  # setpoint_position
+  position:
+    listen_tf: true
+    frame_id: "local_origin"
+    child_frame_id: "setpoint"
+    tf_rate_limit: 10.0
 #
 #  # setpoint_velocity
 #  # None

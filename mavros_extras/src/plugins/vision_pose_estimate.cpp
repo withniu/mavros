@@ -129,6 +129,8 @@ private:
 		tf::Matrix3x3 orientation(transform.getBasis());
 		orientation.getRPY(roll, pitch, yaw);
 
+    ROS_INFO("roll, pitch, yaw = %.2f, %.2f, %.2f", roll, pitch, yaw);
+
 		/* Issue #60.
 		 * Note: this now affects pose callbacks too, but i think its not big deal.
 		 */
@@ -141,7 +143,8 @@ private:
 		// TODO: check conversion. Issue #49.
 		vision_position_estimate(stamp.toNSec() / 1000,
 				position.y(), position.x(), -position.z(),
-				roll, -pitch, yaw); // ??? please check!
+				//roll, -pitch, -yaw); // ??? please check!
+				pitch, roll, yaw); // ??? please check!
 	}
 
 	/* -*- callbacks -*- */
